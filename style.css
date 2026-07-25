@@ -1,22 +1,48 @@
-body{
+body {
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
 
-background:#111;
-color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-font-family:Arial;
-
-text-align:center;
-
-padding-top:120px;
-
+    height: 100vh;
+    margin: 0;
 }
 
-button{
+.hero {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
 
-padding:15px 35px;
+h1 {
+    margin-bottom: 10px;
+}
 
-font-size:20px;
+p {
+    margin-bottom: 30px;
+}
 
-cursor:pointer;
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
+.links a {
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,.2);
+    padding: 12px 24px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.links a:hover {
+    background: white;
+    color: black;
 }
