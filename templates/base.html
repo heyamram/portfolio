@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}[Your Name] — Backend Developer{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="/" class="nav-logo">heyamram<span class="dot">.</span></a>
+    <nav class="nav-links">
+      <a href="/" class="{{ 'active' if active == 'home' else '' }}">Home</a>
+      <a href="/about" class="{{ 'active' if active == 'about' else '' }}">About</a>
+      <a href="/skills" class="{{ 'active' if active == 'skills' else '' }}">Skills</a>
+      <a href="/projects" class="{{ 'active' if active == 'projects' else '' }}">Projects</a>
+      <a href="/blog" class="{{ 'active' if active == 'blog' else '' }}">Blog</a>
+      <a href="/contact" class="{{ 'active' if active == 'contact' else '' }}">Contact</a>
+      <a href="/resume" class="nav-resume">Resume</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>Built page by page, while learning backend engineering.</p>
+  </footer>
+
+</body>
+</html>

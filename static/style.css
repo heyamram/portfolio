@@ -1,0 +1,205 @@
+/* =========================================================
+   Design tokens — change a value here, it updates everywhere.
+   This is the one CSS concept worth understanding first.
+   ========================================================= */
+:root {
+  --bg: #0a0a0f;
+  --surface: #13131c;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f2f2f5;
+  --text-muted: #9599a8;
+  --accent-1: #4f6df5;
+  --accent-2: #9333ea;
+  --gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  --max-width: 960px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .nav-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================= Nav ================= */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 6vw;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+}
+
+.nav-logo .dot {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  border-color: var(--accent-1);
+}
+
+.nav-resume {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+/* ================= Hero (home page) ================= */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14vh 6vw 10vh;
+}
+
+.eyebrow {
+  color: var(--accent-1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin: 0 0 20px;
+}
+
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-sub {
+  color: var(--text-muted);
+  max-width: 540px;
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost {
+  color: var(--accent-1);
+  padding-left: 4px;
+}
+
+/* ================= Generic content page (about, etc.) ================= */
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10vh 6vw;
+}
+
+.page h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.page h2 {
+  font-size: 1.3rem;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  color: var(--accent-1);
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+}
+
+/* ================= Footer ================= */
+.footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 40px 6vw;
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 640px) {
+  .nav {
+    padding: 18px 5vw;
+  }
+  .nav-links {
+    gap: 16px;
+    font-size: 0.85rem;
+  }
+  .hero {
+    padding: 10vh 6vw 6vh;
+  }
+}
