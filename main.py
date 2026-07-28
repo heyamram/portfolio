@@ -9,20 +9,22 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
-
 @app.get("/")
 def home(request: Request):
     return templates.TemplateResponse(
-        "index.html", {"request": request, "active": "home"}
+        request=request,
+        name="index.html",
+        context={"active": "home"},
     )
 
 
 @app.get("/about")
 def about(request: Request):
     return templates.TemplateResponse(
-        "about.html", {"request": request, "active": "about"}
+        request=request,
+        name="about.html",
+        context={"active": "about"},
     )
-
 
 # --- Your turn ---
 # Add /skills, /projects, /blog, /contact, /resume the exact same way:
